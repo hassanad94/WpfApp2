@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp2.NewPacientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="NewPacientWindow" Height="300" Width="500">
+    <Grid>
+        <Label Content="Beteg Neve:" HorizontalAlignment="Left" Margin="32,41,0,0" VerticalAlignment="Top"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="124,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" Text="{Binding Pacient.Name, UpdateSourceTrigger=PropertyChanged}" />
+        <Label Content="Születési hely:" HorizontalAlignment="Left" Margin="32,95,0,0" VerticalAlignment="Top" Width="74"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="124,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" Text="{Binding Pacient.Bplace,UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="Születési Dátum" HorizontalAlignment="Left" Margin="11,151,0,0" VerticalAlignment="Top"/>
+        <DatePicker SelectedDate="{Binding Pacient.Date,UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="111,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="160">
+            <DatePicker.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.296"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DatePicker.RenderTransform>
+        </DatePicker>
+        <Label Content="{Binding Pacient.Age,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="333,151,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tajszám" HorizontalAlignment="Left" Margin="32,192,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="124,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Text="{Binding Pacient.Taj,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="OK" Click="OK_Click" HorizontalAlignment="Left" Margin="182,240,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
